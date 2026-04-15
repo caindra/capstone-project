@@ -39,6 +39,7 @@ function Navbar() {
       
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
         <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Inicio</Link>
+        <Link to="/citas" style={{ color: 'white', textDecoration: 'none' }}>Citas</Link>
         
         {isLoggedIn && (
           <Link to="/citas" style={{ color: 'white', textDecoration: 'none' }}>Cita</Link>
