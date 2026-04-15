@@ -76,24 +76,6 @@ function ProfileCard() {
       <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Mi Perfil</h2>
       
       {!isEditing ? (
-        // Vista de tarjeta de perfil
-      <div>
-        {/* Mostrar datos */}
-        <button onClick={handleEdit} style={{
-            width: '100%',
-            padding: '12px',
-            background: '#2c3e50',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            fontSize: '16px',
-            cursor: 'pointer'
-          }}>
-          ✏️ Editar Perfil
-        </button>
-      </div>
-    ) : (
-      
         <div>
           <div style={{ marginBottom: '15px', padding: '10px', background: '#f5f5f5', borderRadius: '5px' }}>
             <strong>Nombre:</strong> {userData.name}
@@ -110,11 +92,6 @@ function ProfileCard() {
           <div style={{ marginBottom: '15px', padding: '10px', background: '#f5f5f5', borderRadius: '5px' }}>
             <strong>Miembro desde:</strong> {userData.joinDate}
           </div>
-          <div>
-        {/* Formulario de edición */}
-        <button onClick={handleSave}>💾 Guardar</button>
-        <button onClick={handleCancel}>❌ Cancelar</button>
-      </div>
           
           <button onClick={handleEdit} style={{
             width: '100%',
@@ -130,7 +107,6 @@ function ProfileCard() {
           </button>
         </div>
       ) : (
-        // Formulario de edición
         <div>
           <div style={{ marginBottom: '15px' }}>
             <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Nombre:</label>

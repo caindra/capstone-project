@@ -19,18 +19,17 @@ function GiveReviews({ showNotification }) {
     e.preventDefault();
     
     if (!formData.name || !formData.comment) {
-      showNotification('Por favor complete todos los campos', 'error');
+      if (showNotification) {
+        showNotification('Por favor complete todos los campos', 'error');
+      }
       return;
     }
     
     console.log('Reseña enviada:', formData);
-    showNotification('¡Gracias por tu reseña!', 'success');
+    if (showNotification) {
+      showNotification('¡Gracias por tu reseña!', 'success');
+    }
     setIsSubmitted(true);
-    
-    // Desactivar el formulario después de enviar
-    setTimeout(() => {
-      // El formulario queda deshabilitado permanentemente
-    }, 0);
   };
 
   return (
@@ -59,53 +58,61 @@ function GiveReviews({ showNotification }) {
       ) : (
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '15px' }}>
-            <label>Nombre:</label>
+            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Nombre:</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
-              disabled={isSubmitted}  {/* ← AGREGAR DISABLED */}
-              style={{ width: '100%', padding: '10px', ... }}
+              disabled={isSubmitted}
+              style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}
             />
           </div>
           
           <div style={{ marginBottom: '15px' }}>
-            <label>Calificación:</label>
+            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Calificación:</label>
             <select
               name="rating"
               value={formData.rating}
               onChange={handleChange}
-              disabled={isSubmitted}  {/* ← AGREGAR DISABLED */}
-              style={{ width: '100%', padding: '10px', ... }}
+              disabled={isSubmitted}
+              style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}
             >
-              {/* opciones */}
+              <option value="5">⭐⭐⭐⭐⭐ - Excelente</option>
+              <option value="4">⭐⭐⭐⭐ - Muy bueno</option>
+              <option value="3">⭐⭐⭐ - Bueno</option>
+              <option value="2">⭐⭐ - Regular</option>
+              <option value="1">⭐ - Malo</option>
             </select>
           </div>
           
           <div style={{ marginBottom: '15px' }}>
-            <label>Comentario:</label>
+            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Comentario:</label>
             <textarea
               name="comment"
               value={formData.comment}
               onChange={handleChange}
               required
               rows="5"
-              disabled={isSubmitted}  {/* ← AGREGAR DISABLED */}
-              style={{ width: '100%', padding: '10px', ... }}
+              disabled={isSubmitted}
+              style={{ width: '100%', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}
+              placeholder="Cuéntanos tu experiencia..."
             />
           </div>
           
           <button 
             type="submit" 
-            disabled={isSubmitted}  {/* ← AGREGAR DISABLED */}
+            disabled={isSubmitted}
             style={{
               width: '100%',
               padding: '12px',
               background: isSubmitted ? '#ccc' : '#2c3e50',
-              cursor: isSubmitted ? 'not-allowed' : 'pointer',
-              ...
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              fontSize: '16px',
+              cursor: isSubmitted ? 'not-allowed' : 'pointer'
             }}
           >
             {isSubmitted ? 'Reseña Enviada' : 'Enviar Reseña'}

@@ -16,37 +16,20 @@ function Login() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
 
-    const loginData = {
-      email: formData.email,
-      password: formData.password
-    };
-
-    try {
-      // ✅ LLAMADA REAL A API
-      const response = await fetch('http://localhost:5000/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(loginData)
-      });
-      const data = await response.json();
-      
-      if (data.success) {
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('userEmail', formData.email);
-        localStorage.setItem('userName', data.user.name || formData.email.split('@')[0]);
-        navigate('/');
-      } else {
-        setError(data.message || 'Credenciales inválidas');
-      }
-      
-      // ❌ Eliminar la simulación
-    } catch (err) {
-      setError('Error al conectar con el servidor');
-    };
+    // Simulación de login
+    if (formData.email && formData.password) {
+      localStorage.setItem('token', 'fake-jwt-token');
+      localStorage.setItem('userEmail', formData.email);
+      localStorage.setItem('userName', formData.email.split('@')[0]);
+      navigate('/');
+    } else {
+      setError('Credenciales inválidas');
+    }
+  };
 
   return (
     <div style={{
