@@ -43,14 +43,27 @@ function SignUp() {
     };
 
     try {
-      // API real: await axios.post('http://localhost:5000/api/register', userData)
-      console.log('Registrando usuario:', userData);
+      // ✅ DESCOMENTAR ESTO PARA LA API REAL
+      const response = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData)
+      });
+      const data = await response.json();
       
-      // Simular éxito
-      setSuccess('Usuario registrado exitosamente');
-      setTimeout(() => navigate('/login'), 2000);
+      if (data.success) {
+        setSuccess('Usuario registrado exitosamente');
+        setTimeout(() => navigate('/login'), 2000);
+      } else {
+        setError(data.message || 'Error al registrar');
+      }
+      
+      // ❌ Eliminar o comentar la simulación
+      // console.log('Registrando usuario:', userData);
+      // setSuccess('Usuario registrado exitosamente');
+      // setTimeout(() => navigate('/login'), 2000);
     } catch (err) {
-      setError('Error al registrar usuario');
+      setError('Error al conectar con el servidor');
     }
   };
 
