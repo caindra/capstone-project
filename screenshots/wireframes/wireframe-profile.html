@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Perfil de Usuario</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .wireframe-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .profile-content {
+            padding: 40px;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+        }
+        
+        .profile-info h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .profile-info p {
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        
+        .info-row {
+            display: flex;
+            padding: 15px;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        .info-label {
+            width: 120px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .info-value {
+            flex: 1;
+            color: #333;
+        }
+        
+        .edit-button {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .booking-item {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .booking-date {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .booking-status {
+            background: #4caf50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .wireframe-label {
+            background: #ff9800;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-label">WIREFRAME - PERFIL DE USUARIO</div>
+    <div class="wireframe-container">
+        <div class="header">
+            <h2>Mi Cuenta</h2>
+            <div>María González</div>
+        </div>
+        
+        <div class="profile-content">
+            <div class="profile-header">
+                <div class="avatar">👤</div>
+                <div class="profile-info">
+                    <h2>María González</h2>
+                    <p>Miembro desde Enero 2024</p>
+                    <p>📧 maria@email.com</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Información Personal</div>
+                <div class="info-row">
+                    <div class="info-label">Nombre completo:</div>
+                    <div class="info-value">María González López</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Correo electrónico:</div>
+                    <div class="info-value">maria.gonzalez@email.com</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Teléfono:</div>
+                    <div class="info-value">+34 612 345 678</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Dirección:</div>
+                    <div class="info-value">Calle Principal 123, Madrid</div>
+                </div>
+                <button class="edit-button">✏️ Editar Perfil</button>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Mis Reservas</div>
+                <div class="booking-item">
+                    <div>
+                        <div class="booking-date">15 Enero 2024 - 10:00</div>
+                        <div>Consulta General</div>
+                    </div>
+                    <div class="booking-status">Confirmada</div>
+                </div>
+                <div class="booking-item">
+                    <div>
+                        <div class="booking-date">20 Enero 2024 - 16:00</div>
+                        <div>Revisión</div>
+                    </div>
+                    <div class="booking-status">Pendiente</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Preferencias</div>
+                <div class="info-row">
+                    <div class="info-label">Notificaciones:</div>
+                    <div class="info-value">✓ Correo electrónico  ✓ SMS</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Idioma:</div>
+                    <div class="info-value">Español</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 MiAplicación</p>
+        </div>
+    </div>
+</body>
+</html>

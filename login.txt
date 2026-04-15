@@ -1,0 +1,25 @@
+COMANDO cURL PARA INICIO DE SESIÓN:
+
+curl -X POST http://localhost:5000/api/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "maria@test.com",
+    "password": "123456"
+  }'
+
+SALIDA ESPERADA:
+
+{
+  "success": true,
+  "message": "Login exitoso",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": 1,
+    "name": "María González",
+    "email": "maria@test.com",
+    "role": "paciente"
+  }
+}
+
+NOTA: Si tienes un backend real, reemplaza la URL y ejecuta el comando real.
+Para este proyecto, se simula la respuesta.
