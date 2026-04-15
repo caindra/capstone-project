@@ -23,6 +23,12 @@ function FindDoctorSearch({ onSelectDoctor }) {
 
   return (
     <div style={{ padding: '20px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+        <h1>🏥 MediApp</h1>
+        <p style={{ fontSize: '18px', color: '#666' }}>
+          Tu salud en buenas manos - Agenda citas con los mejores especialistas
+        </p>
+      </div>
       <h3>🔍 Buscar Doctor</h3>
       
       <div style={{ marginBottom: '20px' }}>
